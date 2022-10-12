@@ -57,6 +57,6 @@ const formatCharacters = () => {
   })
 };
 
-console.log(formatCharacters());
+// console.log(formatCharacters());
 
 module.exports = formatCharacters;

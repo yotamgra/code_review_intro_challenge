@@ -26,7 +26,7 @@ const formatCharacters = () => {
       filtered.push({ name, height, mass, gender, birth_year });
     }
   });
-  console.log(filtered);
+  // console.log(filtered);
   return filtered;
 };
 

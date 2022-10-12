@@ -25,18 +25,20 @@ const charactersWithHomeWorld = () => {
   return characters.map((character) => {
     const { name } = character;
     const homeworldLink = character.homeworld;
-    let homeworld = () => {
-      planets.forEach(planet => {
+    let homeworld = (() => {
+      let planetName;
+      planets.forEach((planet) => {
         if (planet.url === homeworldLink) {
-          return planet.name;
+          planetName = planet.name;
+          return;
         }
-
-      })
-    }();
+      });
+      return planetName
+    })();
     return { name, homeworld };
   });
 };
 
-console.log(charactersWithHomeWorld());;
-
+// console.log(charactersWithHomeWorld());
+// charactersWithHomeWorld()
 module.exports = charactersWithHomeWorld;
