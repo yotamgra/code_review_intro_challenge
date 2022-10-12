@@ -9,12 +9,18 @@ const charactersWithMediumHeight = () => {
   const MIN_HEIGHT = 180;
   const MAX_HEIGHT = 200;
 
-  return characters.filter((character) => {
-    console.log(character.height);
-    return character.height >= MIN_HEIGHT && character.height <= MAX_HEIGHT;
+  const filtered = characters.filter((character) => {
+    // console.log("character.height outside", character.height);
+    if (character.height === "unknown") {
+      return false;
+    }
+    // console.log("character.height after",character.height);
+    return character.height > MIN_HEIGHT && character.height < MAX_HEIGHT;
   });
+  // filtered.forEach(item => console.log(item.height))
+  return filtered
 };
 
-charactersWithMediumHeight()
+//  charactersWithMediumHeight()
 
 module.exports = charactersWithMediumHeight;

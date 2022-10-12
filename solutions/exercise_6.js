@@ -12,6 +12,8 @@ const solution = () => {
   }));
 };
 
+solution()
+
 console.info(
   "Exercise 6 passed: ",
   JSON.stringify(formatCharacters()) === JSON.stringify(solution())

@@ -22,6 +22,21 @@ const planets = require("../data/planets.json");
 
 const charactersWithHomeWorld = () => {
   //  YOUR CODE HERE
+  return characters.map((character) => {
+    const { name } = character;
+    const homeworldLink = character.homeworld;
+    let homeworld = () => {
+      planets.forEach(planet => {
+        if (planet.url === homeworldLink) {
+          return planet.name;
+        }
+
+      })
+    }();
+    return { name, homeworld };
+  });
 };
+
+console.log(charactersWithHomeWorld());;
 
 module.exports = charactersWithHomeWorld;
